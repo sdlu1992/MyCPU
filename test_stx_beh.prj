@@ -1,0 +1,6 @@
+verilog isim_temp "constant.v"
+verilog isim_temp "constant.v" "STAGES.v"
+verilog isim_temp "constant.v" "MEMORY.v"
+verilog isim_temp "constant.v" "mycpu.v"
+verilog isim_temp "constant.v" "test.v"
+verilog isim_temp "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"

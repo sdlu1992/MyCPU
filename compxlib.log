@@ -1,0 +1,47 @@
+    ____  ____
+   /   /\/   /
+  /___/  \  /    VENDOR      : Xilinx Inc.
+  \   \   \/     VERSION     : 14.2 (P.28xd)
+   \   \         APPLICATION : C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe
+   /   /         CONTENTS    : Compilation Log
+  /___/   /\     FILENAME    : compxlib.log
+  \   \  /  \    
+   \___\/\___\
+
+Release 14.2 - C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe 14.2 (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Processing command line ...
+Library Source Paths => 'C:/Xilinx/14.2/ISE_DS/ISE'
+Current Working Directory => 'C:\Xilinx\MyCPU'
+Compilation Mode = FAST
+Execute Mode = ON
+Scheduling library installation & compilation for architectures: spartan3e
+
+Scheduling library installation & compilation for libraries: simprim unisim xilinxcorelib edk
+
+Signature:-
+------------------------------------------------------------------------------
+C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe -s questa -l all -arch spartan3e -lib unisim -lib simprim -lib xilinxcorelib -lib edk -exclude_superseded -intstyle ise 
+------------------------------------------------------------------------------
+ERROR:Compxlib - COMPXLIB[sim]: Unable to automatically find executables for simulator 'questasim' from the following paths:
+    C:\Xilinx\14.2\ISE_DS\ISE\\lib\nt64
+   C:\Xilinx\14.2\ISE_DS\ISE\\bin\nt64
+   C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64
+   C:\Xilinx\14.2\ISE_DS\ISE\lib\nt64
+   C:\Xilinx\Vivado\2012.2\bin
+   C:\Xilinx\14.2\ISE_DS\PlanAhead\bin
+   C:\Xilinx\14.2\ISE_DS\EDK\bin\nt64
+   C:\Xilinx\14.2\ISE_DS\EDK\lib\nt64
+   C:\Xilinx\14.2\ISE_DS\EDK\gnu\microblaze\nt64\bin
+   C:\Xilinx\14.2\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin
+   C:\Xilinx\14.2\ISE_DS\EDK\gnuwin\bin
+   C:\Xilinx\14.2\ISE_DS\EDK\gnu\arm\nt64\bin
+   C:\Xilinx\14.2\ISE_DS\common\bin\nt64
+   C:\Xilinx\14.2\ISE_DS\common\lib\nt64
+   C:\Program Files (x86)\Parallels\Parallels Tools\Applications
+   C:\Windows\system32
+   C:\Windows
+   C:\Windows\System32\Wbem
+   C:\Windows\System32\WindowsPowerShell\v1.0\.
+Simulator 'questasim' is ignored.

@@ -1,0 +1,4 @@
+verilog work "constant.v"
+verilog work "STAGES.v"
+verilog work "MEMORY.v"
+verilog work "mycpu.v"

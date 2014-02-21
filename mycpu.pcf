@@ -1,0 +1,27 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Fri Feb 21 16:32:49 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "M5" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "M11" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "P7" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "P6" LEVEL 1;
+COMP "leds<4>" LOCATE = SITE "N5" LEVEL 1;
+COMP "leds<5>" LOCATE = SITE "N4" LEVEL 1;
+COMP "leds<6>" LOCATE = SITE "P4" LEVEL 1;
+COMP "leds<7>" LOCATE = SITE "G1" LEVEL 1;
+COMP "isAuto" LOCATE = SITE "N3" LEVEL 1;
+PIN isAuto_pin<0> = BEL "isAuto" PINNAME PAD;
+PIN "isAuto_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "b2d<0>" LOCATE = SITE "M12" LEVEL 1;
+COMP "b2d<1>" LOCATE = SITE "L13" LEVEL 1;
+COMP "b2d<2>" LOCATE = SITE "P12" LEVEL 1;
+COMP "b2d<3>" LOCATE = SITE "N11" LEVEL 1;
+COMP "b2d<4>" LOCATE = SITE "N14" LEVEL 1;
+COMP "b2d<5>" LOCATE = SITE "H12" LEVEL 1;
+COMP "b2d<6>" LOCATE = SITE "L14" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

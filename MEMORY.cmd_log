@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/Xilinx/MyCPU/MEMORY.xst" -ofn "C:/Xilinx/MyCPU/MEMORY.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc basys.ucf -p xc3s100e-cp132-5 MEMORY.ngc MEMORY.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc basys.ucf -p xc3s100e-cp132-5 MEMORY.ngc MEMORY.ngd  

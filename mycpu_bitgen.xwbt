@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\MyCPU\mycpu.ncd
+OUTFILE=C:\Xilinx\MyCPU\mycpu.bit
+FAMILY=Spartan3E
+PART=xc3s100e-5cp132
+WORKINGDIR=C:\Xilinx\MyCPU
+LICENSE=WebPack
+USER_INFO=__0_0_0

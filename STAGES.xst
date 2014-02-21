@@ -1,0 +1,5 @@
+set -tmpdir "C:/Xilinx/MyCPU/xst/projnav.tmp"
+set -xsthdpdir "C:/Xilinx/MyCPU/xst"
+elaborate
+-ifn STAGES.prj
+-ifmt mixed

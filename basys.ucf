@@ -1,0 +1,31 @@
+NET "clk" LOC="b8";
+NET "isAuto" LOC="n3";
+NET "isAuto" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "nextStage" LOC="a7";
+#Pin Assignment for 7-segment displays
+NET "b2d<6>" LOC="l14";
+NET "b2d<5>" LOC="h12";
+NET "b2d<4>" LOC="n14";
+NET "b2d<3>" LOC="n11";
+NET "b2d<2>" LOC="p12";
+NET "b2d<1>" LOC="l13";
+NET "b2d<0>" LOC="m12";
+NET "leds<7>" LOC="G1";
+NET "leds<6>" LOC="p4";
+NET "leds<5>" LOC="n4";
+NET "leds<4>" LOC="n5";
+NET "leds<3>" LOC="p6";
+NET "leds<2>" LOC="p7";
+NET "leds<1>" LOC="m11";
+NET "leds<0>" LOC="m5";
+
+#NET "mAddr<7>" LOC="G1";
+#NET "mAddr<6>" LOC="p4";
+#NET "mAddr<5>" LOC="n4";
+#NET "mAddr<4>" LOC="n5";
+#NET "mAddr<3>" LOC="p6";
+#NET "mAddr<2>" LOC="p7";
+#NET "mAddr<1>" LOC="m11";
+#NET "mAddr<0>" LOC="m5";
+//NET "point" LOC="n13";
+

@@ -1,0 +1,387 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: MEMORY.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MEMORY.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MEMORY"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : MEMORY
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : LUT
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "constant.v" in library work
+Compiling verilog file "MEMORY.v" in library work
+Module <constant> compiled
+Module <MEMORY> compiled
+No errors in compilation
+Analysis of file <"MEMORY.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <MEMORY> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <MEMORY>.
+INFO:Xst:1607 - Contents of array <memory> may be accessed with an index that does not cover the full array size.
+INFO:Xst:1607 - Contents of array <memory> may be accessed with an index that does not cover the full array size.
+Module <MEMORY> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <MEMORY>.
+    Related source file is "MEMORY.v".
+WARNING:Xst:647 - Input <address<31:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1025x32-bit single-port RAM <Mram_memory> for signal <memory>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <MEMORY> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 1025x32-bit single-port RAM                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <MEMORY>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_memory> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1025-word x 32-bit                  |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <write>         | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_in>       |          |
+    |     doA            | connected to signal <data_out>      |          |
+    -----------------------------------------------------------------------
+Unit <MEMORY> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 1025x32-bit single-port distributed RAM               : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <MEMORY> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MEMORY, actual ratio is 141.
+Optimizing block <MEMORY> to meet ratio 100 (+ 5) of 960 slices :
+WARNING:Xst:2254 - Area constraint could not be met for block <MEMORY>, final ratio is 141.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : MEMORY.ngr
+Top Level Output File Name         : MEMORY
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 98
+
+Cell Usage :
+# BELS                             : 1096
+#      GND                         : 1
+#      LUT3                        : 549
+#      LUT4                        : 33
+#      MUXF5                       : 289
+#      MUXF6                       : 128
+#      MUXF7                       : 64
+#      MUXF8                       : 32
+# RAMS                             : 1056
+#      RAM16X1S                    : 32
+#      RAM32X1S                    : 1024
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 76
+#      IBUF                        : 44
+#      OBUF                        : 32
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                     1350  out of    960   140% (*) 
+ Number of 4 input LUTs:               2662  out of   1920   138% (*) 
+    Number used as logic:               582
+    Number used as RAMs:               2080
+ Number of IOs:                          98
+ Number of bonded IOBs:                  77  out of     83    92%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1056  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 6.085ns
+   Maximum output required time after clock: 9.165ns
+   Maximum combinational path delay: 10.428ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 13696 / 7360
+-------------------------------------------------------------------------
+Offset:              6.085ns (Levels of Logic = 4)
+  Source:            address<5> (PAD)
+  Destination:       Mram_memory3 (RAM)
+  Destination Clock: clk rising
+
+  Data Path: address<5> to Mram_memory3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           517   1.106   1.268  address_5_IBUF (address_5_IBUF)
+     LUT3:I1->O            8   0.612   0.795  inst_LPM_DECODE1011 (N210)
+     LUT4:I0->O            1   0.612   0.000  write_ctrl210 (write_ctrl210)
+     MUXF5:I1->O          32   0.278   1.073  write_ctrl2_f5 (write_ctrl2)
+     RAM32X1S:WE               0.341          Mram_memory3
+    ----------------------------------------
+    Total                      6.085ns (2.949ns logic, 3.136ns route)
+                                       (48.5% logic, 51.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1056 / 32
+-------------------------------------------------------------------------
+Offset:              9.165ns (Levels of Logic = 7)
+  Source:            Mram_memory993 (RAM)
+  Destination:       data_out<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Mram_memory993 to data_out<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM32X1S:WCLK->O      1   1.932   0.426  Mram_memory993 (N2019)
+     LUT3:I1->O            1   0.612   0.000  inst_LPM_MUX31_13 (inst_LPM_MUX31_13)
+     MUXF5:I0->O           1   0.278   0.000  inst_LPM_MUX31_11_f5 (inst_LPM_MUX31_11_f5)
+     MUXF6:I0->O           1   0.451   0.000  inst_LPM_MUX31_9_f6 (inst_LPM_MUX31_9_f6)
+     MUXF7:I0->O           1   0.451   0.000  inst_LPM_MUX31_7_f7 (inst_LPM_MUX31_7_f7)
+     MUXF8:I0->O           1   0.451   0.426  inst_LPM_MUX31_5_f8 (inst_LPM_MUX31_5_f8)
+     LUT3:I1->O            1   0.612   0.357  address<10>311 (data_out_31_OBUF)
+     OBUF:I->O                 3.169          data_out_31_OBUF (data_out<31>)
+    ----------------------------------------
+    Total                      9.165ns (7.956ns logic, 1.209ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 6272 / 32
+-------------------------------------------------------------------------
+Delay:               10.428ns (Levels of Logic = 9)
+  Source:            address<1> (PAD)
+  Destination:       data_out<31> (PAD)
+
+  Data Path: address<1> to data_out<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          4160   1.106   1.198  address_1_IBUF (address_1_IBUF)
+     RAM32X1S:A1->O        1   0.890   0.426  Mram_memory1 (N35)
+     LUT3:I1->O            1   0.612   0.000  inst_LPM_MUX_13 (inst_LPM_MUX_13)
+     MUXF5:I0->O           1   0.278   0.000  inst_LPM_MUX_11_f5 (inst_LPM_MUX_11_f5)
+     MUXF6:I0->O           1   0.451   0.000  inst_LPM_MUX_9_f6 (inst_LPM_MUX_9_f6)
+     MUXF7:I0->O           1   0.451   0.000  inst_LPM_MUX_7_f7 (inst_LPM_MUX_7_f7)
+     MUXF8:I0->O           1   0.451   0.426  inst_LPM_MUX_5_f8 (inst_LPM_MUX_5_f8)
+     LUT3:I1->O            1   0.612   0.357  address<10>11 (data_out_0_OBUF)
+     OBUF:I->O                 3.169          data_out_0_OBUF (data_out<0>)
+    ----------------------------------------
+    Total                     10.428ns (8.020ns logic, 2.408ns route)
+                                       (76.9% logic, 23.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.57 secs
+ 
+--> 
+
+Total memory usage is 287692 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+
