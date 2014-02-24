@@ -3,13 +3,19 @@ NET "isAuto" LOC="n3";
 NET "isAuto" CLOCK_DEDICATED_ROUTE = FALSE;
 #NET "nextStage" LOC="a7";
 #Pin Assignment for 7-segment displays
-#NET "b2d<6>" LOC="l14";
-#NET "b2d<5>" LOC="h12";
-#NET "b2d<4>" LOC="n14";
-#NET "b2d<3>" LOC="n11";
-#NET "b2d<2>" LOC="p12";
-#NET "b2d<1>" LOC="l13";
-#NET "b2d<0>" LOC="m12";
+NET "b2d<6>" LOC="l14";
+NET "b2d<5>" LOC="h12";
+NET "b2d<4>" LOC="n14";
+NET "b2d<3>" LOC="n11";
+NET "b2d<2>" LOC="p12";
+NET "b2d<1>" LOC="l13";
+NET "b2d<0>" LOC="m12";
+
+NET "index<4>" LOC="g3";
+NET "index<3>" LOC="b4";
+NET "index<2>" LOC="k3";
+NET "index<1>" LOC="l3";
+NET "index<0>" LOC="p11";
 #NET "leds<7>" LOC="G1";
 #NET "leds<6>" LOC="p4";
 #NET "leds<5>" LOC="n4";

@@ -8,28 +8,28 @@
 <msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">constant</arg>&gt;.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 181: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 189: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 187: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 203: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 208: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 216: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/STAGES.v" Line 222: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">4</arg>&gt; bits.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">constant</arg>&gt;.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 39: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 40: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 41: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 42: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 43: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Xilinx/MyCPU/MEMORY.v" Line 44: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">8</arg>&gt; bits.
@@ -48,6 +48,9 @@
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">constant</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Xilinx/MyCPU/test.v" Line 41: Port <arg fmt="%s" index="1">index</arg> is not connected to this instance
 </msg>
 
 <msg type="warning" file="Simulator" num="0" delta="unknown" >Unable to copy libPortabilityNOSH.dll to the simulation executable directory: <arg fmt="%s" index="1">boost::filesystem::copy_file: ￏﾵￍﾳￕￒﾲﾻﾵﾽￖﾸﾶﾨﾵￄￂﾷﾾﾶﾡﾣ, &quot;isim\test_isim_beh.exe.sim\libPortability.dll&quot;</arg>.

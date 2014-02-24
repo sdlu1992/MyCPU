@@ -30,7 +30,7 @@ module test;
 
 	// Outputs
 //	wire [7:0] b2d;
-//	wire [7:0] leds;
+	wire [7:0] leds;
 	wire point;
 	reg write;
 	wire [7:0] mAddr;
@@ -43,7 +43,7 @@ module test;
 		.isAuto(isAuto),
 		.nextStage(nextStage),
 //		.b2d(b2d), 
-//		.leds(leds),
+		.leds(leds),
 		.mAddr(mAddr),
 		.stage(stage),
 		.outResult(outResult)

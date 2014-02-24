@@ -44,17 +44,17 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-mAddr<0>    |   10.588(R)|clk_BUFGP         |   0.000|
-mAddr<1>    |   10.141(R)|clk_BUFGP         |   0.000|
-mAddr<2>    |   10.351(R)|clk_BUFGP         |   0.000|
-mAddr<3>    |   10.500(R)|clk_BUFGP         |   0.000|
-mAddr<4>    |   10.229(R)|clk_BUFGP         |   0.000|
-mAddr<5>    |   10.433(R)|clk_BUFGP         |   0.000|
-mAddr<6>    |   10.400(R)|clk_BUFGP         |   0.000|
-mAddr<7>    |   10.405(R)|clk_BUFGP         |   0.000|
-stage<0>    |    7.497(R)|clk_BUFGP         |   0.000|
-stage<1>    |    7.799(R)|clk_BUFGP         |   0.000|
-stage<2>    |    7.348(R)|clk_BUFGP         |   0.000|
+mAddr<0>    |   11.851(R)|clk_BUFGP         |   0.000|
+mAddr<1>    |   11.737(R)|clk_BUFGP         |   0.000|
+mAddr<2>    |   11.736(R)|clk_BUFGP         |   0.000|
+mAddr<3>    |   11.402(R)|clk_BUFGP         |   0.000|
+mAddr<4>    |   12.005(R)|clk_BUFGP         |   0.000|
+mAddr<5>    |   11.787(R)|clk_BUFGP         |   0.000|
+mAddr<6>    |   11.958(R)|clk_BUFGP         |   0.000|
+mAddr<7>    |   12.197(R)|clk_BUFGP         |   0.000|
+stage<0>    |    7.557(R)|clk_BUFGP         |   0.000|
+stage<1>    |    7.260(R)|clk_BUFGP         |   0.000|
+stage<2>    |    7.409(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock isAuto to Pad
@@ -62,14 +62,14 @@ Clock isAuto to Pad
             | clk (edge) |                     | Clock  |
 Destination |   to PAD   |Internal Clock(s)    | Phase  |
 ------------+------------+---------------------+--------+
-mAddr<0>    |   10.314(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<1>    |   10.159(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<2>    |   10.052(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<3>    |    9.896(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<4>    |    9.865(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<5>    |   10.794(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<6>    |   10.277(F)|stages/ins_cmp_eq0000|   0.000|
-mAddr<7>    |   10.533(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<0>    |   11.729(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<1>    |   12.014(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<2>    |   11.612(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<3>    |   11.083(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<4>    |   11.980(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<5>    |   10.892(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<6>    |   11.271(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<7>    |   11.614(F)|stages/ins_cmp_eq0000|   0.000|
 ------------+------------+---------------------+--------+
 
 Clock nextStage to Pad
@@ -77,14 +77,14 @@ Clock nextStage to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-mAddr<0>    |   10.321(R)|nextStage_BUFGP   |   0.000|
-mAddr<1>    |    9.874(R)|nextStage_BUFGP   |   0.000|
-mAddr<2>    |   10.084(R)|nextStage_BUFGP   |   0.000|
-mAddr<3>    |   10.233(R)|nextStage_BUFGP   |   0.000|
-mAddr<4>    |    9.962(R)|nextStage_BUFGP   |   0.000|
-mAddr<5>    |   10.166(R)|nextStage_BUFGP   |   0.000|
-mAddr<6>    |   10.133(R)|nextStage_BUFGP   |   0.000|
-mAddr<7>    |   10.138(R)|nextStage_BUFGP   |   0.000|
+mAddr<0>    |   12.103(R)|nextStage_BUFGP   |   0.000|
+mAddr<1>    |   11.989(R)|nextStage_BUFGP   |   0.000|
+mAddr<2>    |   11.988(R)|nextStage_BUFGP   |   0.000|
+mAddr<3>    |   11.654(R)|nextStage_BUFGP   |   0.000|
+mAddr<4>    |   12.257(R)|nextStage_BUFGP   |   0.000|
+mAddr<5>    |   12.039(R)|nextStage_BUFGP   |   0.000|
+mAddr<6>    |   12.210(R)|nextStage_BUFGP   |   0.000|
+mAddr<7>    |   12.449(R)|nextStage_BUFGP   |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -92,7 +92,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.165|         |         |         |
+clk            |    2.729|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock isAuto
@@ -100,7 +100,7 @@ Clock to Setup on destination clock isAuto
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-isAuto         |         |         |         |    2.939|
+isAuto         |         |         |         |    2.843|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock nextStage
@@ -108,25 +108,25 @@ Clock to Setup on destination clock nextStage
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-nextStage      |    2.719|         |         |         |
+nextStage      |    2.649|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-isAuto         |mAddr<0>       |    9.135|
-isAuto         |mAddr<1>       |    8.688|
-isAuto         |mAddr<2>       |    8.898|
-isAuto         |mAddr<3>       |    9.047|
-isAuto         |mAddr<4>       |    8.776|
-isAuto         |mAddr<5>       |    8.980|
-isAuto         |mAddr<6>       |    8.947|
-isAuto         |mAddr<7>       |    8.952|
+isAuto         |mAddr<0>       |   10.432|
+isAuto         |mAddr<1>       |   10.318|
+isAuto         |mAddr<2>       |   10.317|
+isAuto         |mAddr<3>       |    9.983|
+isAuto         |mAddr<4>       |   10.586|
+isAuto         |mAddr<5>       |   10.368|
+isAuto         |mAddr<6>       |   10.539|
+isAuto         |mAddr<7>       |   10.778|
 ---------------+---------------+---------+
 
 
-Analysis completed Mon Feb 24 11:30:51 2014 
+Analysis completed Mon Feb 24 15:58:00 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

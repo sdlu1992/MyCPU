@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Xilinx/MyCPU/test_isim_beh.exe -prj C:/Xilinx/MyCPU/test_beh.prj work.test work.glbl 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Xilinx/MyCPU/test_isim_beh.exe" -prj "C:/Xilinx/MyCPU/test_beh.prj" "work.test" "work.glbl" 
 ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -7,16 +7,16 @@ Analyzing Verilog file "C:/Xilinx/MyCPU/constant.v" into library work
 Analyzing Verilog file "C:/Xilinx/MyCPU/constant.v" into library work
 WARNING:HDLCompiler:687 - "C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclaration of module <constant>.
 Analyzing Verilog file "C:/Xilinx/MyCPU/STAGES.v" into library work
-WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 181: Constant value is truncated to fit in <4> bits.
-WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 187: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 189: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 203: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 208: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 216: Constant value is truncated to fit in <4> bits.
+WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/STAGES.v" Line 222: Constant value is truncated to fit in <4> bits.
 Analyzing Verilog file "C:/Xilinx/MyCPU/constant.v" into library work
 WARNING:HDLCompiler:687 - "C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclaration of module <constant>.
 Analyzing Verilog file "C:/Xilinx/MyCPU/MEMORY.v" into library work
-WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 39: Constant value is truncated to fit in <8> bits.
-WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 40: Constant value is truncated to fit in <8> bits.
 WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 41: Constant value is truncated to fit in <8> bits.
 WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 42: Constant value is truncated to fit in <8> bits.
-WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 43: Constant value is truncated to fit in <8> bits.
 WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 44: Constant value is truncated to fit in <8> bits.
 WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 45: Constant value is truncated to fit in <8> bits.
 WARNING:HDLCompiler:568 - "C:/Xilinx/MyCPU/MEMORY.v" Line 46: Constant value is truncated to fit in <8> bits.
@@ -29,6 +29,7 @@ WARNING:HDLCompiler:687 - "C:/Xilinx/MyCPU/constant.v" Line 50: Illegal redeclar
 Analyzing Verilog file "C:/Xilinx/MyCPU/test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Xilinx/MyCPU/test.v" Line 41: Port index is not connected to this instance
 Completed static elaboration
 Compiling module MEMORY
 Compiling module STAGES
@@ -36,9 +37,9 @@ Compiling module mycpu
 Compiling module test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
+Waiting for 1 sub-compilation(s) to finish...
 WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: 系统找不到指定的路径。, "isim\test_isim_beh.exe.sim\libPortability.dll".
 Compiled 5 Verilog Units
 Built simulation executable C:/Xilinx/MyCPU/test_isim_beh.exe
-Fuse Memory Usage: 26660 KB
-Fuse CPU Usage: 421 ms
+Fuse Memory Usage: 26880 KB
+Fuse CPU Usage: 420 ms

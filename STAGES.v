@@ -26,15 +26,14 @@ module STAGES(
 	output [7:0] ins_addr,
 	input [`WORD_SIZE-1:0] data_in,
 	output [`WORD_SIZE-1:0] data_out,
-//	output [7:0] b2d,
-//	output [7:0] leds,
+	output [7:0] b2ds,
+	output [7:0] leds,
 	output [2:0] stageOut,
-	output [`WORD_SIZE-1:0] outResult
+	output [`WORD_SIZE-1:0] outResult,
+	input [4:0] index
     );
 
-reg test ;
 reg [7:0] pc;
-//reg [7:0] pc_back;
 reg [7:0] addr;
 reg [2:0] stage;
 reg [2:0] stageAuto;
@@ -42,23 +41,28 @@ reg [2:0] stageHM;
 reg [1:0] mWrite;
 reg [`WORD_SIZE-1:0] ins;
 reg [`WORD_SIZE-1:0] dataOut;
-reg [`WORD_SIZE-1:0] cRegs[16:0];
+reg [`WORD_SIZE-1:0] cRegs[31:0];
 reg [4:0] rs;
 reg [4:0] rt;
 reg [4:0] rd;
 reg [4:0] sa;
 reg [`WORD_SIZE-1:0] immResult;
 reg [`GET_ADDR] address;
-
-//assign leds[7:0] = data_in[7:0];
+reg [7:0] b2d;
+reg [4:0] indexReg;
+reg [`WORD_SIZE:0] result;
+integer test;
+assign leds[7:0] = data_in[7:0];
 assign ins_addr[7:0] = addr[7:0];
 assign write = mWrite;
 assign stageOut[2:0] = stageAuto[2:0];
-assign outResult = cRegs[15];
-assign data_out[15:0] = dataOut[15:0];
+assign outResult = result;
+assign data_out[30:0] = dataOut[30:0];
+assign b2ds = b2d;
+//assign data_out = cRegs[9];
+//assign data_out[31] = dataOut[31];
 initial begin
 pc = 8'h00;
-//pc_back = 8'h00;
 addr = 8'h00;
 stage = 0;
 stageHM = 0;
@@ -78,8 +82,9 @@ cRegs[8] = 8;
 cRegs[9] = 9;
 cRegs[10] = 10;
 cRegs[11] = 11;
-cRegs[15] = 14;
+cRegs[15] = 32'hffffffff;
 cRegs[16] = 9;
+dataOut = 8'h00000000;
 end
 
 //ins_addr[`WORD_SIZE-1:0] = 8'h00000000;
@@ -108,10 +113,12 @@ begin
 		mWrite = 0;
 		addr = pc;
 		ins = data_in;
+		
 		pc = pc + 1;
 	end
 	if(stage == 2) begin
 		case(ins[`GET_OP])
+		
 		`TYPE_R: begin
 			rt = ins[`GET_RT];
 			rd = ins[`GET_RD];
@@ -137,6 +144,7 @@ begin
 			address = ins[`GET_ADDR];
 		end
 		endcase
+		
 	end
 	if(stage == 3) begin
 		case(ins[`GET_OP])
@@ -160,47 +168,71 @@ begin
 				else
 					cRegs[rd] = 0;
 			end
+			`FUNC_SLL:begin
+				cRegs[rd] = cRegs[rt] << sa;
+			end
+			`FUNC_SRL:begin
+				cRegs[rd] = cRegs[rt] >> sa;
+			end
+			`FUNC_SRA:begin
+				cRegs[rt] = 32'hf0000000;
+				test = cRegs[rt];
+				cRegs[rd] = test >>> 10;
+				result = cRegs[rd];
+//				cRegs[rd] = 8'hffffffff;
+//				cRegs[`WORD_SIZE-1:`WORD_SIZE-1-sa] = 32'hffffffff;
+			end
 			endcase
 		end
-//		`TYPE_ADDI: begin
-//			
-//			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
-//			cRegs[rt] = cRegs[rs] + immResult;
-//		end
-//		`TYPE_ANDI: begin
-//			
-//			immResult[`WORD_SIZE-1:16] = 4'h0000;
-//			cRegs[rt] = cRegs[rs] & immResult;
-//		end
-//		`TYPE_ORI: begin
-//			
-//			immResult[`WORD_SIZE-1:16] = 4'h0000;
-//			cRegs[rt] = cRegs[rs] | immResult;
-//		end
+		`TYPE_ADDI: begin
+			
+			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?16'hffff:16'h0000;
+			cRegs[rt] = cRegs[rs] + immResult;
+		end
+		`TYPE_ANDI: begin
+			
+			immResult[`WORD_SIZE-1:16] = 16'h0000;
+			cRegs[rt] = cRegs[rs] & immResult;
+		end
+		`TYPE_ORI: begin
+			
+			immResult[`WORD_SIZE-1:16] = 16'h0000;
+			cRegs[rt] = cRegs[rs] | immResult;
+		end
 		`TYPE_LW: begin
-			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
-//			pc_back = pc;
+			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?16'hffff:16'h0000;
 			addr = cRegs[rs][7:0] + immResult[7:0];
 			
 		end
 		`TYPE_SW: begin
-			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
-//			pc_back = pc;
+			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?16'hffff:16'h0000;
 			addr = cRegs[rs][7:0] + immResult[7:0];
 			dataOut = cRegs[rt];
 			
 			mWrite = 1;
 		end
-//		`TYPE_BEQ: begin
-//		end
-//		`TYPE_BNE: begin
-//		end
+		`TYPE_BEQ: begin
+			if(cRegs[rs] == cRegs[rt]) begin
+				immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?16'hffff:16'h0000;
+				pc = pc + immResult;
+			end
+		end
+		`TYPE_BNE: begin
+			if(cRegs[rs] != cRegs[rt]) begin
+				immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?16'hffff:16'h0000;
+				pc = pc + immResult;
+			end
+		end
+		`TYPE_J: begin
+			pc[7:0] = address[7:0];
+		end
 		endcase
+		
 	end
 	if(stage == 4) begin
 	case(ins[`GET_OP])
 	`TYPE_LW: begin
-		cRegs[rt] = data_in;
+		cRegs[rt][31:0] = data_in[31:0];
 //		pc = pc_back;
 	end
 	`TYPE_SW: begin
@@ -208,7 +240,35 @@ begin
 		//mWrite = 0;
 //		pc = pc_back;
 	end
+	
 	endcase
+	addr = pc;
 	end
 end
+
+//	//7∂Œ“Î¬Î∆˜
+//	always @(index)
+//	begin
+//	indexReg = index;
+//	case(cRegs[indexReg])
+//		0: b2d = 7'b0000001;
+//		1: b2d = 7'b1001111;
+//		2: b2d = 7'b0010010;
+//		3: b2d = 7'b0000110;
+//		4: b2d = 7'b1001100;
+//		5: b2d = 7'b0100100;
+//		6: b2d = 7'b0100000;
+//		7: b2d = 7'b0001111;
+//		8: b2d = 7'b0000000;
+//		9: b2d = 7'b1000000;	
+//		10:b2d = 7'b0001000;
+//		11:b2d = 7'b0000011;
+//		12:b2d = 7'b1000110;
+//		13:b2d = 7'b0100001;
+//		14:b2d = 7'b0000110;
+//		15:b2d = 7'b0001110;
+//		default: b2d = 7'b1111111;
+//	endcase 
+//	end
+
 endmodule

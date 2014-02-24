@@ -22,13 +22,14 @@ module mycpu(
 	input clk,
 	input isAuto,
 	input nextStage,
-//	output [7:0] b2d,
-//	output [7:0] leds,
+	input [4:0] index,
+	output [7:0] b2d,
+	output [7:0] leds,
 	output [7:0] mAddr,
 	output [2:0] stage,
 	output [`WORD_SIZE-1:0] outResult
    );
-reg [31:0] result;
+//reg [31:0] result;
 wire write;
 //wire [`WORD_SIZE-1:0] mAddr;
 wire [`WORD_SIZE-1:0] mDataIn;
@@ -51,10 +52,11 @@ STAGES stages(
 	.ins_addr(mAddr),
 	.data_in(mDataOut),
 	.data_out(mDataIn),
-//	.b2d(b2d),
-//	.leds(leds),
+	.b2ds(b2d),
+	.leds(leds),
 	.stageOut(stage),
-	.outResult(outResult)
+	.outResult(outResult),
+	.index(index)
 );
 //	//7¶ÎÒëÂëÆ÷
 //	always @(*)
