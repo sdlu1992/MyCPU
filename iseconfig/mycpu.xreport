@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-02-21T16:02:45</DateModified>
+  <DateModified>2014-02-24T10:34:49</DateModified>
   <ModuleName>mycpu</ModuleName>
-  <SummaryTimeStamp>2014-02-21T15:59:41</SummaryTimeStamp>
+  <SummaryTimeStamp>2014-02-24T10:30:09</SummaryTimeStamp>
   <SavedFilePath>C:/Xilinx/MyCPU/iseconfig/mycpu.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Xilinx/MyCPU\</ImplementationReportsDirectory>
   <DateInitialized>2014-02-20T16:07:30</DateInitialized>

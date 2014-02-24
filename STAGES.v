@@ -26,43 +26,47 @@ module STAGES(
 	output [7:0] ins_addr,
 	input [`WORD_SIZE-1:0] data_in,
 	output [`WORD_SIZE-1:0] data_out,
-	output [7:0] b2d,
-	output [7:0] leds,
+//	output [7:0] b2d,
+//	output [7:0] leds,
 	output [2:0] stageOut,
 	output [`WORD_SIZE-1:0] outResult
     );
 
 reg test ;
 reg [7:0] pc;
+//reg [7:0] pc_back;
 reg [7:0] addr;
 reg [2:0] stage;
 reg [2:0] stageAuto;
 reg [2:0] stageHM;
 reg [1:0] mWrite;
 reg [`WORD_SIZE-1:0] ins;
-reg [`WORD_SIZE-1:0] cRegs[31:0];
+reg [`WORD_SIZE-1:0] dataOut;
+reg [`WORD_SIZE-1:0] cRegs[16:0];
 reg [4:0] rs;
 reg [4:0] rt;
 reg [4:0] rd;
 reg [4:0] sa;
-reg [`GET_IMM] imm;
+reg [`WORD_SIZE-1:0] immResult;
 reg [`GET_ADDR] address;
 
-assign leds[7:0] = data_in[7:0];
-assign ins_addr[7:0] = pc[7:0];
+//assign leds[7:0] = data_in[7:0];
+assign ins_addr[7:0] = addr[7:0];
 assign write = mWrite;
 assign stageOut[2:0] = stageAuto[2:0];
-assign outResult = cRegs[2];
+assign outResult = cRegs[15];
+assign data_out[15:0] = dataOut[15:0];
 initial begin
 pc = 8'h00;
+//pc_back = 8'h00;
 addr = 8'h00;
 stage = 0;
 stageHM = 0;
 stageAuto = 0;
 mWrite = 0;
 
-ins[`WORD_SIZE-1:0] = data_in[`WORD_SIZE-1:0]; 
-cRegs[0] = 10;
+ins = data_in; 
+cRegs[0] = 1;
 cRegs[1] = 5;
 cRegs[2] = 2;
 cRegs[3] = 3;
@@ -74,6 +78,8 @@ cRegs[8] = 8;
 cRegs[9] = 9;
 cRegs[10] = 10;
 cRegs[11] = 11;
+cRegs[15] = 14;
+cRegs[16] = 9;
 end
 
 //ins_addr[`WORD_SIZE-1:0] = 8'h00000000;
@@ -124,7 +130,7 @@ begin
 		`TYPE_I:begin
 			rs = ins[`GET_RS];
 			rt = ins[`GET_RT];
-			imm = ins[`GET_IMM];
+			immResult[`GET_IMM] = ins[`GET_IMM];
 		end
 		
 		`TYPE_J:begin
@@ -156,9 +162,53 @@ begin
 			end
 			endcase
 		end
+//		`TYPE_ADDI: begin
+//			
+//			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
+//			cRegs[rt] = cRegs[rs] + immResult;
+//		end
+//		`TYPE_ANDI: begin
+//			
+//			immResult[`WORD_SIZE-1:16] = 4'h0000;
+//			cRegs[rt] = cRegs[rs] & immResult;
+//		end
+//		`TYPE_ORI: begin
+//			
+//			immResult[`WORD_SIZE-1:16] = 4'h0000;
+//			cRegs[rt] = cRegs[rs] | immResult;
+//		end
+		`TYPE_LW: begin
+			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
+//			pc_back = pc;
+			addr = cRegs[rs][7:0] + immResult[7:0];
+			
+		end
+		`TYPE_SW: begin
+			immResult[`WORD_SIZE-1:16] = (immResult[15] == 1)?4'hffff:4'h0000;
+//			pc_back = pc;
+			addr = cRegs[rs][7:0] + immResult[7:0];
+			dataOut = cRegs[rt];
+			
+			mWrite = 1;
+		end
+//		`TYPE_BEQ: begin
+//		end
+//		`TYPE_BNE: begin
+//		end
 		endcase
 	end
 	if(stage == 4) begin
+	case(ins[`GET_OP])
+	`TYPE_LW: begin
+		cRegs[rt] = data_in;
+//		pc = pc_back;
+	end
+	`TYPE_SW: begin
+		cRegs[15] = cRegs[rt];
+		//mWrite = 0;
+//		pc = pc_back;
+	end
+	endcase
 	end
 end
 endmodule

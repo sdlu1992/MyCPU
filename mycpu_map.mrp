@@ -9,25 +9,27 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Fri Feb 21 16:32:48 2014
+Mapped Date    : Mon Feb 24 11:30:40 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:   33
 Logic Utilization:
-  Number of Slice Flip Flops:             3 out of   1,920    1%
-  Number of 4 input LUTs:                 3 out of   1,920    1%
+  Total Number Slice Registers:          14 out of   1,920    1%
+    Number used as Flip Flops:            6
+    Number used as Latches:               8
+  Number of 4 input LUTs:                25 out of   1,920    1%
 Logic Distribution:
-  Number of occupied Slices:              3 out of     960    1%
-    Number of Slices containing only related logic:       3 out of       3 100%
-    Number of Slices containing unrelated logic:          0 out of       3   0%
+  Number of occupied Slices:             14 out of     960    1%
+    Number of Slices containing only related logic:      14 out of      14 100%
+    Number of Slices containing unrelated logic:          0 out of      14   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:           3 out of   1,920    1%
-  Number of bonded IOBs:                 53 out of      83   63%
-  Number of BUFGMUXs:                     1 out of      24    4%
+  Total Number of 4 input LUTs:          25 out of   1,920    1%
+  Number of bonded IOBs:                 14 out of      83   16%
+  Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                2.80
+Average Fanout of Non-Clock Nets:                3.22
 
 Peak Memory Usage:  253 MB
 Total REAL time to MAP completion:  1 secs 
@@ -72,16 +74,76 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:367 - The signal <isAuto_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
+WARNING:MapLib:701 - Signal outResult<31> connected to top level port
+   outResult<31> has been removed.
+WARNING:MapLib:701 - Signal outResult<30> connected to top level port
+   outResult<30> has been removed.
+WARNING:MapLib:701 - Signal outResult<29> connected to top level port
+   outResult<29> has been removed.
+WARNING:MapLib:701 - Signal outResult<28> connected to top level port
+   outResult<28> has been removed.
+WARNING:MapLib:701 - Signal outResult<27> connected to top level port
+   outResult<27> has been removed.
+WARNING:MapLib:701 - Signal outResult<26> connected to top level port
+   outResult<26> has been removed.
+WARNING:MapLib:701 - Signal outResult<25> connected to top level port
+   outResult<25> has been removed.
+WARNING:MapLib:701 - Signal outResult<24> connected to top level port
+   outResult<24> has been removed.
+WARNING:MapLib:701 - Signal outResult<23> connected to top level port
+   outResult<23> has been removed.
+WARNING:MapLib:701 - Signal outResult<22> connected to top level port
+   outResult<22> has been removed.
+WARNING:MapLib:701 - Signal outResult<21> connected to top level port
+   outResult<21> has been removed.
+WARNING:MapLib:701 - Signal outResult<20> connected to top level port
+   outResult<20> has been removed.
+WARNING:MapLib:701 - Signal outResult<19> connected to top level port
+   outResult<19> has been removed.
+WARNING:MapLib:701 - Signal outResult<18> connected to top level port
+   outResult<18> has been removed.
+WARNING:MapLib:701 - Signal outResult<17> connected to top level port
+   outResult<17> has been removed.
+WARNING:MapLib:701 - Signal outResult<16> connected to top level port
+   outResult<16> has been removed.
+WARNING:MapLib:701 - Signal outResult<15> connected to top level port
+   outResult<15> has been removed.
+WARNING:MapLib:701 - Signal outResult<14> connected to top level port
+   outResult<14> has been removed.
+WARNING:MapLib:701 - Signal outResult<13> connected to top level port
+   outResult<13> has been removed.
+WARNING:MapLib:701 - Signal outResult<12> connected to top level port
+   outResult<12> has been removed.
+WARNING:MapLib:701 - Signal outResult<11> connected to top level port
+   outResult<11> has been removed.
+WARNING:MapLib:701 - Signal outResult<10> connected to top level port
+   outResult<10> has been removed.
+WARNING:MapLib:701 - Signal outResult<9> connected to top level port
+   outResult<9> has been removed.
+WARNING:MapLib:701 - Signal outResult<8> connected to top level port
+   outResult<8> has been removed.
+WARNING:MapLib:701 - Signal outResult<7> connected to top level port
+   outResult<7> has been removed.
+WARNING:MapLib:701 - Signal outResult<6> connected to top level port
+   outResult<6> has been removed.
+WARNING:MapLib:701 - Signal outResult<5> connected to top level port
+   outResult<5> has been removed.
+WARNING:MapLib:701 - Signal outResult<4> connected to top level port
+   outResult<4> has been removed.
+WARNING:MapLib:701 - Signal outResult<3> connected to top level port
+   outResult<3> has been removed.
+WARNING:MapLib:701 - Signal outResult<2> connected to top level port
+   outResult<2> has been removed.
+WARNING:MapLib:701 - Signal outResult<1> connected to top level port
+   outResult<1> has been removed.
+WARNING:MapLib:701 - Signal outResult<0> connected to top level port
+   outResult<0> has been removed.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net stages/ins_cmp_eq0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network nextStage has no load.
-INFO:LIT:395 - The above info message is repeated 1 more times for the following
-   (max. 5 shown):
-   isAuto_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -89,14 +151,177 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   1 block(s) optimized away
+  96 block(s) removed
+  64 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
 
-Optimized Block(s):
-TYPE 		BLOCK
-GND 		XST_GND
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "outResult<0>" is unused and has been removed.
+ Unused block "outResult_0_OBUF" (BUF) removed.
+  The signal "outResult_0_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<0>" (ROM) removed.
+The signal "outResult<10>" is unused and has been removed.
+ Unused block "outResult_10_OBUF" (BUF) removed.
+  The signal "outResult_10_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<10>" (ROM) removed.
+The signal "outResult<11>" is unused and has been removed.
+ Unused block "outResult_11_OBUF" (BUF) removed.
+  The signal "outResult_11_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<11>" (ROM) removed.
+The signal "outResult<12>" is unused and has been removed.
+ Unused block "outResult_12_OBUF" (BUF) removed.
+  The signal "outResult_12_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<12>" (ROM) removed.
+The signal "outResult<13>" is unused and has been removed.
+ Unused block "outResult_13_OBUF" (BUF) removed.
+  The signal "outResult_13_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<13>" (ROM) removed.
+The signal "outResult<14>" is unused and has been removed.
+ Unused block "outResult_14_OBUF" (BUF) removed.
+  The signal "outResult_14_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<14>" (ROM) removed.
+The signal "outResult<15>" is unused and has been removed.
+ Unused block "outResult_15_OBUF" (BUF) removed.
+  The signal "outResult_15_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<15>" (ROM) removed.
+The signal "outResult<16>" is unused and has been removed.
+ Unused block "outResult_16_OBUF" (BUF) removed.
+  The signal "outResult_16_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<16>" (ROM) removed.
+The signal "outResult<17>" is unused and has been removed.
+ Unused block "outResult_17_OBUF" (BUF) removed.
+  The signal "outResult_17_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<17>" (ROM) removed.
+The signal "outResult<18>" is unused and has been removed.
+ Unused block "outResult_18_OBUF" (BUF) removed.
+  The signal "outResult_18_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<18>" (ROM) removed.
+The signal "outResult<19>" is unused and has been removed.
+ Unused block "outResult_19_OBUF" (BUF) removed.
+  The signal "outResult_19_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<19>" (ROM) removed.
+The signal "outResult<1>" is unused and has been removed.
+ Unused block "outResult_1_OBUF" (BUF) removed.
+  The signal "outResult_1_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<1>" (ROM) removed.
+The signal "outResult<20>" is unused and has been removed.
+ Unused block "outResult_20_OBUF" (BUF) removed.
+  The signal "outResult_20_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<20>" (ROM) removed.
+The signal "outResult<21>" is unused and has been removed.
+ Unused block "outResult_21_OBUF" (BUF) removed.
+  The signal "outResult_21_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<21>" (ROM) removed.
+The signal "outResult<22>" is unused and has been removed.
+ Unused block "outResult_22_OBUF" (BUF) removed.
+  The signal "outResult_22_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<22>" (ROM) removed.
+The signal "outResult<23>" is unused and has been removed.
+ Unused block "outResult_23_OBUF" (BUF) removed.
+  The signal "outResult_23_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<23>" (ROM) removed.
+The signal "outResult<24>" is unused and has been removed.
+ Unused block "outResult_24_OBUF" (BUF) removed.
+  The signal "outResult_24_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<24>" (ROM) removed.
+The signal "outResult<25>" is unused and has been removed.
+ Unused block "outResult_25_OBUF" (BUF) removed.
+  The signal "outResult_25_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<25>" (ROM) removed.
+The signal "outResult<26>" is unused and has been removed.
+ Unused block "outResult_26_OBUF" (BUF) removed.
+  The signal "outResult_26_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<26>" (ROM) removed.
+The signal "outResult<27>" is unused and has been removed.
+ Unused block "outResult_27_OBUF" (BUF) removed.
+  The signal "outResult_27_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<27>" (ROM) removed.
+The signal "outResult<28>" is unused and has been removed.
+ Unused block "outResult_28_OBUF" (BUF) removed.
+  The signal "outResult_28_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<28>" (ROM) removed.
+The signal "outResult<29>" is unused and has been removed.
+ Unused block "outResult_29_OBUF" (BUF) removed.
+  The signal "outResult_29_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<29>" (ROM) removed.
+The signal "outResult<2>" is unused and has been removed.
+ Unused block "outResult_2_OBUF" (BUF) removed.
+  The signal "outResult_2_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<2>" (ROM) removed.
+The signal "outResult<30>" is unused and has been removed.
+ Unused block "outResult_30_OBUF" (BUF) removed.
+  The signal "outResult_30_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<30>" (ROM) removed.
+The signal "outResult<31>" is unused and has been removed.
+ Unused block "outResult_31_OBUF" (BUF) removed.
+  The signal "outResult_31_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<31>" (ROM) removed.
+The signal "outResult<3>" is unused and has been removed.
+ Unused block "outResult_3_OBUF" (BUF) removed.
+  The signal "outResult_3_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<3>" (ROM) removed.
+The signal "outResult<4>" is unused and has been removed.
+ Unused block "outResult_4_OBUF" (BUF) removed.
+  The signal "outResult_4_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<4>" (ROM) removed.
+The signal "outResult<5>" is unused and has been removed.
+ Unused block "outResult_5_OBUF" (BUF) removed.
+  The signal "outResult_5_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<5>" (ROM) removed.
+The signal "outResult<6>" is unused and has been removed.
+ Unused block "outResult_6_OBUF" (BUF) removed.
+  The signal "outResult_6_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<6>" (ROM) removed.
+The signal "outResult<7>" is unused and has been removed.
+ Unused block "outResult_7_OBUF" (BUF) removed.
+  The signal "outResult_7_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<7>" (ROM) removed.
+The signal "outResult<8>" is unused and has been removed.
+ Unused block "outResult_8_OBUF" (BUF) removed.
+  The signal "outResult_8_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<8>" (ROM) removed.
+The signal "outResult<9>" is unused and has been removed.
+ Unused block "outResult_9_OBUF" (BUF) removed.
+  The signal "outResult_9_OBUF" is unused and has been removed.
+   Unused block "stages/cRegs_15_mux0015<9>" (ROM) removed.
+Unused block "outResult<0>" (PAD) removed.
+Unused block "outResult<10>" (PAD) removed.
+Unused block "outResult<11>" (PAD) removed.
+Unused block "outResult<12>" (PAD) removed.
+Unused block "outResult<13>" (PAD) removed.
+Unused block "outResult<14>" (PAD) removed.
+Unused block "outResult<15>" (PAD) removed.
+Unused block "outResult<16>" (PAD) removed.
+Unused block "outResult<17>" (PAD) removed.
+Unused block "outResult<18>" (PAD) removed.
+Unused block "outResult<19>" (PAD) removed.
+Unused block "outResult<1>" (PAD) removed.
+Unused block "outResult<20>" (PAD) removed.
+Unused block "outResult<21>" (PAD) removed.
+Unused block "outResult<22>" (PAD) removed.
+Unused block "outResult<23>" (PAD) removed.
+Unused block "outResult<24>" (PAD) removed.
+Unused block "outResult<25>" (PAD) removed.
+Unused block "outResult<26>" (PAD) removed.
+Unused block "outResult<27>" (PAD) removed.
+Unused block "outResult<28>" (PAD) removed.
+Unused block "outResult<29>" (PAD) removed.
+Unused block "outResult<2>" (PAD) removed.
+Unused block "outResult<30>" (PAD) removed.
+Unused block "outResult<31>" (PAD) removed.
+Unused block "outResult<3>" (PAD) removed.
+Unused block "outResult<4>" (PAD) removed.
+Unused block "outResult<5>" (PAD) removed.
+Unused block "outResult<6>" (PAD) removed.
+Unused block "outResult<7>" (PAD) removed.
+Unused block "outResult<8>" (PAD) removed.
+Unused block "outResult<9>" (PAD) removed.
 
 To enable printing of redundant blocks removed and signals merged, set the
 detailed map report option and rerun map.
@@ -108,56 +333,17 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| b2d<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| b2d<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | isAuto                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| leds<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<4>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<5>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<6>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| leds<7>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<0>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<1>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<2>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<3>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<4>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<5>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<6>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<7>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<8>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<9>                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<10>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<11>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<12>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<13>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<14>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<15>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<16>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<17>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<18>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<19>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<20>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<21>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<22>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<23>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<24>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<25>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<26>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<27>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<28>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<29>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<30>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| outResult<31>                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<3>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<4>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<5>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<6>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| mAddr<7>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| nextStage                          | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | stage<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | stage<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | stage<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |

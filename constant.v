@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 `define WORD_SIZE 32
-`define MEM_SIZE 256
+`define MEM_SIZE 64
 `define TYPE_R 6'b000000
 `define TYPE_ADDI 6'b001000
 `define TYPE_ANDI 6'b001100
@@ -8,7 +8,8 @@
 `define TYPE_LW 6'b100011
 `define TYPE_SW 6'b101011
 `define TYPE_BEQ 6'b000100
-`define TYPE_BNQ 6'b000101
+`define TYPE_BNE 6'b000101
+`define TYPE_I `TYPE_ADDI,`TYPE_ANDI,`TYPE_ORI,`TYPE_LW,`TYPE_SW,`TYPE_BEQ,`TYPE_BNE
 `define TYPE_J 6'b000010
 `define FUNC_ADD 6'b100000
 `define FUNC_SUB 6'b100010
@@ -18,8 +19,8 @@
 `define FUNC_SLL 6'b000000
 `define FUNC_SRL 6'b000010
 `define FUNC_SRA 6'b000011
-`define GET_OP 31:26
-`define GET_FUNC 5:0
+`define GET_OP `WORD_SIZE-1:`WORD_SIZE-6
+`define GET_FUNC `WORD_SIZE-27:0
 `define GET_RS 25:21
 `define GET_RT 20:16
 `define GET_RD 15:11

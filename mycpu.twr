@@ -44,9 +44,47 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-stage<0>    |    7.033(R)|clk_BUFGP         |   0.000|
-stage<1>    |    7.142(R)|clk_BUFGP         |   0.000|
-stage<2>    |    7.254(R)|clk_BUFGP         |   0.000|
+mAddr<0>    |   10.588(R)|clk_BUFGP         |   0.000|
+mAddr<1>    |   10.141(R)|clk_BUFGP         |   0.000|
+mAddr<2>    |   10.351(R)|clk_BUFGP         |   0.000|
+mAddr<3>    |   10.500(R)|clk_BUFGP         |   0.000|
+mAddr<4>    |   10.229(R)|clk_BUFGP         |   0.000|
+mAddr<5>    |   10.433(R)|clk_BUFGP         |   0.000|
+mAddr<6>    |   10.400(R)|clk_BUFGP         |   0.000|
+mAddr<7>    |   10.405(R)|clk_BUFGP         |   0.000|
+stage<0>    |    7.497(R)|clk_BUFGP         |   0.000|
+stage<1>    |    7.799(R)|clk_BUFGP         |   0.000|
+stage<2>    |    7.348(R)|clk_BUFGP         |   0.000|
+------------+------------+------------------+--------+
+
+Clock isAuto to Pad
+------------+------------+---------------------+--------+
+            | clk (edge) |                     | Clock  |
+Destination |   to PAD   |Internal Clock(s)    | Phase  |
+------------+------------+---------------------+--------+
+mAddr<0>    |   10.314(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<1>    |   10.159(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<2>    |   10.052(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<3>    |    9.896(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<4>    |    9.865(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<5>    |   10.794(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<6>    |   10.277(F)|stages/ins_cmp_eq0000|   0.000|
+mAddr<7>    |   10.533(F)|stages/ins_cmp_eq0000|   0.000|
+------------+------------+---------------------+--------+
+
+Clock nextStage to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+mAddr<0>    |   10.321(R)|nextStage_BUFGP   |   0.000|
+mAddr<1>    |    9.874(R)|nextStage_BUFGP   |   0.000|
+mAddr<2>    |   10.084(R)|nextStage_BUFGP   |   0.000|
+mAddr<3>    |   10.233(R)|nextStage_BUFGP   |   0.000|
+mAddr<4>    |    9.962(R)|nextStage_BUFGP   |   0.000|
+mAddr<5>    |   10.166(R)|nextStage_BUFGP   |   0.000|
+mAddr<6>    |   10.133(R)|nextStage_BUFGP   |   0.000|
+mAddr<7>    |   10.138(R)|nextStage_BUFGP   |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -54,11 +92,41 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.749|         |         |         |
+clk            |    3.165|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock isAuto
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+isAuto         |         |         |         |    2.939|
+---------------+---------+---------+---------+---------+
 
-Analysis completed Fri Feb 21 16:32:58 2014 
+Clock to Setup on destination clock nextStage
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+nextStage      |    2.719|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+isAuto         |mAddr<0>       |    9.135|
+isAuto         |mAddr<1>       |    8.688|
+isAuto         |mAddr<2>       |    8.898|
+isAuto         |mAddr<3>       |    9.047|
+isAuto         |mAddr<4>       |    8.776|
+isAuto         |mAddr<5>       |    8.980|
+isAuto         |mAddr<6>       |    8.947|
+isAuto         |mAddr<7>       |    8.952|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Feb 24 11:30:51 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

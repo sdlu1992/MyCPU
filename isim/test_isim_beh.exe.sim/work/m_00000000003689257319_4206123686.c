@@ -10,29 +10,34 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
+/* This file is designed for use with ISim build 0xa0883be4 */
+
+#define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
+#include <memory.h>
+#ifdef __GNUC__
+#include <stdlib.h>
+#else
+#include <malloc.h>
+#define alloca _alloca
+#endif
+static const char *ng0 = "C:/Xilinx/MyCPU/mycpu.v";
 
-struct XSI_INFO xsi_info;
 
 
-
-int main(int argc, char **argv)
+static void Initial_36_0(char *t0)
 {
-    xsi_init_design(argc, argv);
-    xsi_register_info(&xsi_info);
 
-    xsi_register_min_prec_unit(-12);
-    work_m_00000000004201701085_2098114829_init();
-    work_m_00000000000940055714_3099717468_init();
-    work_m_00000000003689257319_4206123686_init();
-    work_m_00000000000444533958_1985558087_init();
-    work_m_00000000004134447467_2073120511_init();
+LAB0:    xsi_set_current_line(37, ng0);
+
+LAB2:
+LAB1:    return;
+}
 
 
-    xsi_register_tops("work_m_00000000000444533958_1985558087");
-    xsi_register_tops("work_m_00000000004134447467_2073120511");
-
-
-    return xsi_run_simulation(argc, argv);
-
+extern void work_m_00000000003689257319_4206123686_init()
+{
+	static char *pe[] = {(void *)Initial_36_0};
+	xsi_register_didat("work_m_00000000003689257319_4206123686", "isim/test_isim_beh.exe.sim/work/m_00000000003689257319_4206123686.didat");
+	xsi_register_executes(pe);
 }
